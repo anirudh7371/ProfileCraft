@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Details Form</title>
+  <style>
+    body {
+      background-color: #859fec;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+    h2 {
+      color: red;
+      margin-bottom: 20px;
+    }
+    form {
+      margin: 20px auto;
+      padding: 20px;
+      max-width: 600px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      text-align: left;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 12px;
+      box-sizing: border-box;
+    }
+    div {
+      margin-bottom: 16px;
+    }
+    .gender {
+      display: flex;
+      align-items: center; /* Align radio buttons vertically */
+    }
+    .hobbies {
+      display: flex;
+      justify-content: space-around;
+      gap: 56px;
+    }
+    button {
+      background-color: #46e246;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    input[type="checkbox"] {
+      margin: 4px 0 0;
+      line-height: normal;
+      width: 20px;
+      height: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Personal Details</h2>
+
+  <form action="/details" method="post" enctype="multipart/form-data">
+    <label for="fname">Name:</label>
+    <input type="text" id="fname" name="fname" required />
+
+    <label for="pass">Password:</label>
+    <input type="password" id="pass" name="pass" required />
+
+    <label for="email">E-Mail ID:</label>
+    <input type="text" id="email" name="email" required />
+
+    <div class="gender">
+      <label>Gender:</label>
+      <input type="radio" id="male" name="gender" value="male" />
+      <label for="male">Male</label>
+      <input type="radio" id="female" name="gender" value="female" />
+      <label for="female">Female</label>
+      <input type="radio" id="others" name="gender" value="others" />
+      <label for="others">Others</label>
+    </div>
+
+    <label for="contact">Contact:</label>
+    <input type="text" id="contact" name="contact" required />
+
+    <h2>Educational Qualification</h2>
+
+    <label for="degree">Degree:</label>
+    <select id="degree" name="degree" required>
+      <option value="bachelors">Bachelors</option>
+      <option value="masters">Masters</option>
+      <option value="dr">Doctorate</option>
+      <option value="mastersint">Masters(Integrated)</option>
+    </select>
+
+    <label for="engineering">Engineering:</label>
+    <select name="engineering" id="engineering" required>
+      <option value="computerscience">Computer Science</option>
+      <option value="mechanical">Mechanical</option>
+      <option value="electrical">Electrical</option>
+      <option value="civil">Civil</option>
+    </select>
+
+    <div class="hobbies">
+      <label>Hobbies:</label>
+      <input type="checkbox" name="hobbies" value="Reading Books" />
+      <label>Reading Books</label>
+      <input type="checkbox" name="hobbies" value="Watching OTT" />
+      <label>Watching OTT</label>
+    </div>    
+
+    <h2>Address</h2>
+    <label for="address">Address:</label>
+    <textarea id="address" name="address" rows="5" cols="40" required>Enter your address here ...</textarea>
+
+    <label for="resumefile">Attach Resume:</label>
+    <input type="file" id="resumefile" name="resumefile"/>
+
+    <br/>
+    <button type="submit">Submit ☑️</button>
+  </form>
+</body>
+</html>

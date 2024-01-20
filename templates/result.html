@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submission Result</title>
+</head>
+<body>
+    <h1>Form Submission Result</h1>
+
+    <h2>Personal Details:</h2>
+    <ul>
+        <li><strong>Name:</strong> {{ form_data['name'] }}</li>
+        <li><strong>Password:</strong> {{ form_data['password'] }}</li>
+        <li><strong>Email:</strong> {{ form_data['email'] }}</li>
+        <li><strong>Gender:</strong> {{ form_data['gender'] }}</li>
+        <li><strong>Contact:</strong> {{ form_data['contact'] }}</li>
+        <li><strong>Degree:</strong> {{ form_data['degree'] }}</li>
+        <li><strong>Engineering:</strong> {{ form_data['engineering'] }}</li>
+        <li><strong>Hobbies:</strong> {{ ', '.join(form_data['hobbies']) }}</li>
+        <li><strong>Address:</strong> {{ form_data['address'] }}</li>
+        {% if form_data['resume_file'] %}
+            <li><strong>Resume File:</strong> {{ form_data['resume_file'] }}</li>
+        {% endif %}
+    </ul>
+
+    <!-- Add additional styling or formatting as needed -->
+
+    <p><a href="{{ url_for('home_page') }}">Go back to the home page</a></p>
+</body>
+</html>
